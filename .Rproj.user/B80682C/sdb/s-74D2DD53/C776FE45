@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n## This script takes advantage of the scoping rules of R to calculate the inverse of a matrix. The \n## inverted matrix is cached until a change has been made to it, so that the inversion is not performed \n## repeatedly, thus saving time.  \n\n## MakeCacheMatrix creates a special matrix object that can cache its inverse\n\nmakeCacheMatrix <- function(x = matrix()) {   # x is the unsolved matrix\n  \n  stored <- NULL          # stored is the cached value\n  \n  # y = orignal data\n  set <- function (y){    # x and stored are outside of the function's env\n    x <<- y           # Sets the value of the unsolved matrix\n    stored <<- NULL   # THis is a new matrix so the stored inverted matrix is null\n  }\n  \n  get <- function () x    # Retrieves the original matrix\n  \n  # Sets the stored value with the solved (inverted) matrix\n  setStored <- function (solved) stored <<- solved   # Stored is outside the scope \n  getStored <- function () stored   # function that returns the value of the inverted matrix      \n  \n  # Calls to the makeCacheMatrix are through this list, x$listItem\n  list (set = set, get = get, setStored = setStored, getStored = getStored) \n}\n\n\n## cacheSolve computes the inverse of the special matrix returned by makeCacheMatrix, caches the inverse, \n## and retrieves the cached inverse.\n\ncacheSolve <- function(x, ...) {                # This function takes the original matrix X                   \n  \n  \n  ## Return a matrix that is the inverse of 'x'\n  solved <- x$getStored()                 # Retrieves stored value                        \n  \n  if (!is.null(solved)) {                 # Has a value been stored? Null = no, anything else = yes\n    message (\"getting cached data\")\n    return(solved)                  # Return stored solved value, if there is one\n  } else {                                # If the stored value is null\n    \n    unsolved <- x$get()               # get the unsolved matrix\n    solved <- solve(unsolved, ...)    # invert the unsolved matrix\n    x$setStored(solved)               # set the stored value to the inverted (solved) matrix\n  }\n  solved\n}\n\n\n\nnewMatrix <- matrix(c(1,2,3,4), nrow=2, ncol=2)\nprint(newMatrix)\ncachedMatrix <- makeCacheMatrix (newMatrix)\nfinalSolved <- cacheSolve(cachedMatrix)\nprint(finalSolved)\n\nsecondCall <- cacheSolve (cachedMatrix)\nprint(secondCall)\n\nnewNewMatrix <- matrix(c(4,5,6,7), nrow=2,ncol=2)\nnewCachedMatrix <- makeCacheMatrix (newNewMatrix)\nthirdCall<- cacheSolve(newCachedMatrix)\nprint(thirdCall)\n\nfourthcall <- cacheSolve(newCachedMatrix)\nprint(fourthcall)\n\n",
+    "created" : 1500003650509.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3677594050",
+    "id" : "C776FE45",
+    "lastKnownWriteTime" : 1500003714,
+    "last_content_update" : 1500003714991,
+    "path" : "D:/Dropbox/Sync Coding Computers/Data Science Specialization/R Programming/Classwork/cachematrix.R",
+    "project_path" : "cachematrix.R",
+    "properties" : {
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
