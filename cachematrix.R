@@ -45,20 +45,3 @@ cacheSolve <- function(x, ...) {
 }
 
 
-
-newMatrix <- matrix(c(1,2,3,4), nrow=2, ncol=2)
-print(newMatrix)
-cachedMatrix <- makeCacheMatrix (newMatrix)
-finalSolved <- cacheSolve(cachedMatrix)
-print(finalSolved)
-
-secondCall <- cacheSolve (cachedMatrix)
-print(secondCall)
-
-newNewMatrix <- matrix(c(4,5,6,7), nrow=2,ncol=2)
-newCachedMatrix <- makeCacheMatrix (newNewMatrix)
-thirdCall<- cacheSolve(newCachedMatrix)
-print(thirdCall)
-
-fourthcall <- cacheSolve(newCachedMatrix)
-print(fourthcall)
