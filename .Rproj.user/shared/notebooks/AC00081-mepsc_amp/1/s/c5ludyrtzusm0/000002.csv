@@ -1,0 +1,7 @@
+"0","```r
+bins <- amp[[\"bins\"]]
+oil_saline <- amp[[\"oil_saline\"]]
+oil_igf <- amp[[\"oil_igf\"]]
+cpf_saline <- amp[[\"cpf_saline\"]]
+cpf_igf <- amp[[\"cpf_igf\"]]
+```"

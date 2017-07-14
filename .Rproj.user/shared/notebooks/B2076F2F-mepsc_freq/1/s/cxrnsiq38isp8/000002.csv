@@ -1,0 +1,16 @@
+"0","```r
+ 
+plot1 <- plot(bins, oil_saline, type = 'l',lty = 1)
+        points(bins,oil_igf, col=\"blue\", type = 'l', lty = 1)
+plot2 <- plot(bins, oil_saline, type = 'l',lty = 1)
+        points(bins,cpf_saline, col=\"red\", type = 'l', lty = 1)
+plot3 <- plot(bins, oil_saline, type = 'l',lty = 1)
+        points(bins,cpf_igf, col=\"orange\", type = 'l', lty = 1)
+plot4 <- plot(bins, oil_igf, type = 'l',col=\"blue\", lty = 1)
+        points(bins,cpf_saline, col=\"red\", type = 'l', lty = 1)
+plot5 <- plot(bins, oil_igf, type = 'l', col=\"blue\", lty = 1)
+        points(bins,cpf_igf, col=\"orange\", type = 'l', lty = 1)
+plot6 <- plot(bins, cpf_saline, type = 'l',col=\"red\", lty = 1)
+        points(bins,cpf_igf, col=\"orange\", type = 'l', lty = 1)
+
+```"

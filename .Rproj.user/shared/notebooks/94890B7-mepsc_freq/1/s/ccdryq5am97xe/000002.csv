@@ -1,0 +1,9 @@
+"0","```r
+
+bins <- freq[[\"bins\"]]
+oil_saline <- freq[[\"oil_saline\"]]
+oil_igf <- freq[[\"oil_igf\"]]
+cpf_saline <- freq[[\"cpf_saline\"]]
+cpf_igf <- freq[[\"cpf_igf\"]]
+
+```"

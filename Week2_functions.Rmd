@@ -1,0 +1,91 @@
+---
+title: "Week2 Functions"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+#Define a function like a variable
+add2 <- function (x,y) { 
+  x+ y  
+   }
+
+```
+
+```{r}
+#Returns subset of #s greater than 10
+above10 <- function (x){
+  use<- x > 10
+  x[use]
+}
+```
+
+```{r}
+#Dataframe with average of each column
+columnmean <- function (y, removeNA){
+  nc <- ncol (y)
+  means <- numeric(nc)
+  for(i in 1:nc){
+    means[i] <- mean(y[,i], na.rm = removeNA )
+  }
+  means
+}
+```
+
+```{r}
+#Lexical scoping demo - fn within a fn
+make.power <- function (n){
+  pow <-function (x) {  #function x has access to var n because pow is a member of make.power's environment
+    x^n
+  }
+}
+
+cube <- make.power(3)
+square <- make.power(2)
+cube(3)
+square(3)
+
+```
+```{r}
+add0s <- function (i){
+        if (i < 10) {
+                add0 <- "00"
+        } else if (i >= 10 & i <100){
+                add0 <- "0"
+        } else {
+                add0 <- ""
+        }
+        return(add0)
+}
+
+# Function to get cleaned data from each file (i) in the list
+getfile <- function (directory, i){                                                         
+        #create data frame from file location passed by user
+        # 0s will depend on 10s spot
+        
+        location <-paste(directory,"/", add0s(i), i,".csv", sep="")
+        
+        # import file for reading
+        infile <- read.csv(location)
+        
+        return (infile)
+}
+
+complete <- function (directory, id = 1:332){
+        for (i in id){
+              getfile(i)
+                
+        }
+}
+
+complete("specdata", c(2, 4, 8, 10, 12))
+
+```
+
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).

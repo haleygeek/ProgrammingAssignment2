@@ -1,0 +1,5 @@
+"0","```r
+
+freq <- read.csv(\"C:\\Users\\hspeed\\Dropbox\\Sync Data Analysis Computers\\Gulf War Project\\Statistics\\minifreq.csv\")
+
+```"

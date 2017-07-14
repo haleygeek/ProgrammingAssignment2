@@ -1,0 +1,4 @@
+"0","```r
+plot6 <- plot(bins, cpf_saline, type = 'l',col=\"red\", lty = 1)
+        points(bins,cpf_igf, col=\"orange\", type = 'l', lty = 1)
+```"

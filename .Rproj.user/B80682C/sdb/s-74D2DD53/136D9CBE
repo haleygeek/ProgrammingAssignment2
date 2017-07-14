@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"mEPSC Analysis - Amplitude\"\noutput: html_notebook\n---\n\nAuthor: Haley E. Speed, Ph.D\nDate: 07-10-17\nProject: Gulf War\n\nLoad in the data from a CSV file\nEach column in the file should contain the average values for each bin\n\n```{r}\n\namp <- read.csv(\"C:\\\\Users\\\\hspeed\\\\Dropbox\\\\Sync Data Analysis Computers\\\\Gulf War Project\\\\Statistics\\\\miniamp.csv\")\n\n```\n\n<h2>One-Way ANOVA on total mEPSC Amplitude for each pair of groups</h2>\nBecause of some quirk, you have to run the fit before the plotting for ks\n\n1. Fit the model first (One Way ANOVA, Completely Randomized Design)\n2. diagnostic plots\n3. If data fit a normal distribution (Q-Q), evaluate the model effects\n\nFor Oil+Saline vs Oil+IGF-1:\n\n```{r}\n\nfit1 <-aov(total_amp1 ~ groups1, data=amp)\nplot(fit1) \ntable1 <-summary(fit1) \ntable2 <- drop1(fit1,~.,test=\"F\") \ntable1\ntable2\n```\n\nFor Oil+Saline vs CPF+Saline:\n\n```{r}\n\nfit2 <-aov(total_amp2 ~ groups2, data=amp)\nplot(fit2) \ntable3 <-summary(fit2) \ntable4 <- drop1(fit2,~.,test=\"F\") \ntable3\ntable4\n```\n\nFor Oil+Saline vs CPF+IGF-1:\n\n```{r}\n\nfit3 <-aov(total_amp3 ~ groups3, data=amp)\nplot(fit3) \ntable5 <-summary(fit3) \ntable6 <- drop1(fit3,~.,test=\"F\") \ntable5\ntable6\n\n```\n\nFor Oil+IGF-1 vs CPF+Saline:\n\n```{r}\n\nfit4 <-aov(total_amp4 ~ groups4, data=amp)\nplot(fit4) \ntable7 <-summary(fit4) \ntable8 <- drop1(fit4,~.,test=\"F\") \ntable7\ntable8\n\n```\n\nFor Oil+IGF-1 vs CPF+IGF-1:\n\n```{r}\n\nfit5 <-aov(total_amp5 ~ groups5, data=amp)\nplot(fit5) \ntable9 <-summary(fit5) \ntable10 <- drop1(fit5,~.,test=\"F\") \ntable9\ntable10\n\n```\n\nFor CPF+Saline vs CPF+IGF-1:\n\n```{r}\n\nfit6 <-aov(total_amp6 ~ groups6, data=amp)\nplot(fit6) \ntable11 <-summary(fit6) \ntable12 <- drop1(fit6,~.,test=\"F\") \ntable11\ntable12\n\n```\n\n\n<h2>Kolmogorov-Smirnov Tests for Skewedness on Cumululative Inter-event Intervals</h2>\n\nExtract the columns to the corresponding variables from the dataset\n\n```{r}\n\nbins <- amp[[\"bins\"]]\noil_saline <- amp[[\"oil_saline\"]]\noil_igf <- amp[[\"oil_igf\"]]\ncpf_saline <- amp[[\"cpf_saline\"]]\ncpf_igf <- amp[[\"cpf_igf\"]]\n\n```\n\n\nRun the ks-test for each set of groups\n\n```{r}\nks1 <- ks.test(oil_saline,oil_igf)\nks2 <- ks.test(oil_saline,cpf_saline)\nks3 <- ks.test(oil_saline,cpf_igf)\nks4 <- ks.test(oil_igf,cpf_saline)\nks5 <- ks.test(cpf_igf,cpf_igf)\nks6 <- ks.test(cpf_saline,cpf_igf)\n```\n\n\nPlot cumulative distributions of inter-event intervals\n\n```{r}\n \nplot1 <- plot(bins, oil_saline, type = 'l',lty = 1)\n        points(bins,oil_igf, col=\"blue\", type = 'l', lty = 1)\nplot2 <- plot(bins, oil_saline, type = 'l',lty = 1)\n        points(bins,cpf_saline, col=\"red\", type = 'l', lty = 1)\nplot3 <- plot(bins, oil_saline, type = 'l',lty = 1)\n        points(bins,cpf_igf, col=\"orange\", type = 'l', lty = 1)\nplot4 <- plot(bins, oil_igf, type = 'l',col=\"blue\", lty = 1)\n        points(bins,cpf_saline, col=\"red\", type = 'l', lty = 1)\nplot5 <- plot(bins, oil_igf, type = 'l', col=\"blue\", lty = 1)\n        points(bins,cpf_igf, col=\"orange\", type = 'l', lty = 1)\nplot6 <- plot(bins, cpf_saline, type = 'l',col=\"red\", lty = 1)\n        points(bins,cpf_igf, col=\"orange\", type = 'l', lty = 1)\n\n```\n\n\n\n\n\n",
+    "created" : 1499981553513.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2746774965",
+    "id" : "136D9CBE",
+    "lastKnownWriteTime" : 1499981596,
+    "last_content_update" : 1499981596146,
+    "path" : "D:/Dropbox/Sync Data Analysis Computers/Gulf War Project/Statistics/R Scripts/mepsc_amp.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "chunk_output_type" : "inline"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

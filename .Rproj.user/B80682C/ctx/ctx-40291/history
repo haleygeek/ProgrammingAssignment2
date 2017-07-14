@@ -1,0 +1,142 @@
+install.packages("swirl")
+install_from_package(swirl)
+load(swirl)
+library(siwrl)
+library(swirl)
+library(swirl)
+library(Swirl)
+library(swirl)
+install.packages("swirl")
+library(swirl)
+install.packages("swirl")
+setwd("~/Dropbox/Sync Coding Computers/Data Science Specialization/R Programming/Classwork")
+cc <- complete("specdata", c(6, 10, 20, 34, 100, 200, 310))
+print(cc$nobs)
+complete <- function (directory, id = 1:332){
+nobs <- list()
+for (i in id){
+# Was getting caught up here. i = the VALUE in id, not the index!!!
+#From each file # of completely observed cases
+fullset <- getfile(directory, i)
+truecases <- complete.cases(fullset$sulfate,fullset$nitrate)
+finalcases <- fullset$sulfate[truecases == TRUE]
+nobs[[length(nobs) + 1]] <- length(finalcases)
+}
+return (data.frame(cbind(id,nobs)))
+}
+cc <- complete("specdata", c(6, 10, 20, 34, 100, 200, 310))
+print(cc$nobs)
+cc <- complete("specdata", c(6, 10, 20, 34, 100, 200, 310))
+print(cc$nobs)
+function
+cc <- complete("specdata", c(6, 10, 20, 34, 100, 200, 310))
+print(cc$nobs)
+cc <- complete("specdata", c(6, 10, 20, 34, 100, 200, 310))
+print(cc$nobs)
+cc <- complete("specdata", 54)
+print(cc$nobs)
+set.seed(42)
+cc <- complete("specdata", 332:1)
+use <- sample(332, 10)
+print(cc[use, "nobs"])
+cr <- corr("specdata")
+cr <- sort(cr)
+set.seed(868)
+out <- round(cr[sample(length(cr), 5)], 4)
+print(out)
+cr <- corr("specdata")
+cr <- sort(cr)
+set.seed(868)
+out <- round(cr[sample(length(cr), 5)], 4)
+print(out)
+source("corr.R")
+cleanr2 <- vector(mode = "numeric", length = 0)
+cr <- corr("specdata")
+cr <- sort(cr)
+set.seed(868)
+out <- round(cr[sample(length(cr), 5)], 4)
+print(out)
+cr <- corr("specdata", 129)
+cr <- sort(cr)
+n <- length(cr)
+set.seed(197)
+out <- c(n, round(cr[sample(n, 5)], 4))
+print(out)
+cr <- corr("specdata", 2000)
+n <- length(cr)
+cr <- corr("specdata", 1000)
+cr <- sort(cr)
+print(c(n, round(cr, 4)))
+?colmeans
+?colMeans
+?cat()
+library(datasets)
+data(iris)
+?iris
+lapply(iris$Sepal.Length,mean)
+spLength <- iris$Sepal.Length
+sapply(spLength,mean)
+c(spLength) <- iris$Sepal.Length
+spLength <- list(iris$Sepal.Length)
+sapply(spLengthh)
+spLength <- iris$Sepal.Length
+class(iris$Sepal.Length)
+sapply(spLengthh)
+spLength <- iris$Sepal.Length
+apply(spLengthh)
+tapply(iris$Sepal.Length, mean)
+apply(iris$Sepal.Length, mean)
+apply(iris$Sepal.Length, 2, mean)
+apply(iris$Sepal.Length, mean, 2)
+apply(iris$Sepal.Length, 2, mean)
+class(iris)
+apply(iris$Sepal.Length, 2, mean)
+apply(as.matrix(iris$Sepal.Length, 2, mean))
+apply(as.matrix(iris$Sepal.Length), 2, mean)
+View(iris)
+rowMeans(iris[, 1:4])
+apply(iris, 2, mean)
+apply(iris[, 1:4], 2, mean)
+library(datasets)
+data(mtcars)
+?mtcars
+?with
+sapply(split(mtcars$mpg, mtcars$cyl), mean)
+with(mtcars, tapply(mpg, cyl, mean))
+tapply(mtcars$mpg, mtcars$cyl, mean)
+sapply(mtcars, cyl, mean)
+tapply(mtcars$cyl, mtcars$mpg, mean)
+lapply(mtcars, mean)
+mean(mtcars$mpg, mtcars$cyl)
+apply(mtcars, 2, mean)
+split(mtcars, mtcars$cyl)
+?dif
+?diff
+tapply(mtcars$hp,mtcars$cyl,diff)
+tapply(mtcars$hp,mtcars$cyl,mean)
+means <- tapply(mtcars$hp,mtcars$cyl,mean)
+lapply(means, function (x) (means$8-means$4))
+lapply(means, function (x) (means[[3]]-means$4[[1]]))
+class(means)
+lapply(means, function (x) (means[3]-means$4[1]))
+means$4
+means
+means[1]
+lapply(means, function (x) (means[3]-means[1])
+)
+lapply(means, function (x) (means[3]-means[1]))
+View(mtcars)
+View(mtcars)
+View(mtcars)
+means <- tapply(mtcars$hp,mtcars$cyl,mean)
+lapply(means, function (x) (means[3]-means[1]))
+means
+debug(1s)
+debug(ls)
+debug(ls)
+ls
+?debug
+tapply(iris$Sepal.Length, iris$Species, mean)
+debug
+exit
+browser

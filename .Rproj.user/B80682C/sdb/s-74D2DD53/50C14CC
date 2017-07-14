@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "complete <- function (directory, id = 1:332){\n      \n       nobs <- list()\n       \n       for (i in id){\n                # Was getting caught up here. i = the VALUE in id, not the index!!!\n                #From each file # of completely observed cases\n                fullset <- getfile(directory, i)\n                truecases <- complete.cases(fullset$sulfate,fullset$nitrate)\n                finalcases <- fullset$sulfate[truecases == TRUE]\n                nobs[[length(nobs) + 1]] <- length(finalcases)\n                      \n        }\n       return (data.frame(cbind(id,nobs)))\n      \n      \n}\n\n# Function to format csv file name\nadd0s <- function (i){\n        if (i < 10) {\n                add0 <- \"00\"\n        } else if (i >= 10 & i <100){\n                add0 <- \"0\"\n        } else {\n                add0 <- \"\"\n        }\n        return(add0)\n}\n\n# Function to get cleaned data from each file (i) in the list\ngetfile <- function (directory, i){                                                         \n        #create data frame from file location passed by user\n        # 0s will depend on 10s spot\n        \n        location <-paste(directory,\"/\", add0s(i), i,\".csv\", sep=\"\")\n        \n        # import file for reading\n        infile <- read.csv(location)\n        \n        return (infile)\n}\n",
+    "created" : 1499824983838.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2335076069",
+    "id" : "50C14CC",
+    "lastKnownWriteTime" : 1499824551,
+    "last_content_update" : 1499824551,
+    "path" : "D:/Dropbox/Sync Coding Computers/Data Science Specialization/R Programming/Classwork/complete.R",
+    "project_path" : "complete.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

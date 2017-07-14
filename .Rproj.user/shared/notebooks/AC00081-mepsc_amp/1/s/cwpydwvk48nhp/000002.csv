@@ -1,0 +1,30 @@
+"0","```r
+ks1 <- ks.test(oil_saline,oil_igf)
+```"
+"1","cannot compute exact p-value with ties
+"
+"0","```r
+ks2 <- ks.test(oil_saline,cpf_saline)
+```"
+"1","cannot compute exact p-value with ties
+"
+"0","```r
+ks3 <- ks.test(oil_saline,cpf_igf)
+```"
+"1","cannot compute exact p-value with ties
+"
+"0","```r
+ks4 <- ks.test(oil_igf,cpf_saline)
+```"
+"1","cannot compute exact p-value with ties
+"
+"0","```r
+ks5 <- ks.test(cpf_igf,cpf_igf)
+```"
+"1","cannot compute exact p-value with ties
+"
+"0","```r
+ks6 <- ks.test(cpf_saline,cpf_igf)
+```"
+"1","cannot compute exact p-value with ties
+"

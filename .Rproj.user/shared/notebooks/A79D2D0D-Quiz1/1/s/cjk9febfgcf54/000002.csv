@@ -1,0 +1,4 @@
+"0","# Getting the mean of ""Ozone"" column"
+"0","data1 <- read.csv(file=""D:\\Dropbox\\Sync Coding Computers\\Data Science Specialization\\R Programming\\Classwork\\hw1_data.csv"")"
+"0","notna <- !is.na(data1[ ,""Ozone""])"
+"0","data2 <- data1[notna == TRUE, ""Ozone""]"

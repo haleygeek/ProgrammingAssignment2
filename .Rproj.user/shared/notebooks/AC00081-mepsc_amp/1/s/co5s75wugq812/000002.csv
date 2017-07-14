@@ -1,0 +1,4 @@
+"0","```r
+fit2 <-aov(total_amp2 ~ groups2, data=amp)
+plot(fit2) 
+```"

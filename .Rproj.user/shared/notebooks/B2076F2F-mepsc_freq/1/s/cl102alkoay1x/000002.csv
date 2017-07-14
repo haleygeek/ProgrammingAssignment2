@@ -1,0 +1,8 @@
+"0","```r
+ks1 <- ks.test(oil_saline,oil_igf)
+ks2 <- ks.test(oil_saline,cpf_saline)
+ks3 <- ks.test(oil_saline,cpf_igf)
+ks4 <- ks.test(oil_igf,cpf_saline)
+ks5 <- ks.test(cpf_igf,cpf_igf)
+ks6 <- ks.test(cpf_saline,cpf_igf)
+```"

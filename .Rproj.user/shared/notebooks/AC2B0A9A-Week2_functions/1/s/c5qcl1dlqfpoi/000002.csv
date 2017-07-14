@@ -1,0 +1,4 @@
+"0","#Define a function like a variable"
+"0","add2 <- function (x,y) { "
+"0","  x+ y  "
+"0","  }"

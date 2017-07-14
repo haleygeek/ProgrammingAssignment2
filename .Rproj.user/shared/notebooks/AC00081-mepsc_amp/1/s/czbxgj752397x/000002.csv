@@ -1,0 +1,5 @@
+"0","```r
+ 
+plot1 <- plot(bins, oil_saline, type = 'l',lty = 1)
+        points(bins,oil_igf, col=\"blue\", type = 'l', lty = 1)
+```"

@@ -1,0 +1,9 @@
+"0","```r
+
+fit2 <-aov(total_freq2 ~ groups2, data=freq)
+plot(fit2) 
+table3 <-summary(fit2) 
+table4 <- drop1(fit2,~.,test=\"F\") 
+table3
+table4
+```"

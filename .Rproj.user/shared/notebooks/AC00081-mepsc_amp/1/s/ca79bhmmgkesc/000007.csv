@@ -1,0 +1,21 @@
+"0","```r
+table5 <-summary(fit3) 
+table6 <- drop1(fit3,~.,test=\"F\") 
+table5
+```"
+"1","            Df Sum Sq Mean Sq F value Pr(>F)
+groups3      1   2.44   2.443   0.354   0.56
+Residuals   16 110.41   6.901               
+7 observations deleted due to missingness
+"
+"0","```r
+table6
+```"
+"1","Single term deletions
+
+Model:
+total_amp3 ~ groups3
+        Df Sum of Sq    RSS    AIC F value Pr(>F)
+<none>               110.41 36.649               
+groups3  1    2.4432 112.85 35.043  0.3541 0.5601
+"
